@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
-<body onclick="playAudio()" style="text-align:center; background:black; color:white;">
+<body style="text-align:center; background:black; color:white;">
 
 <h1>🎵 Hang</h1>
 
-<audio id="audio">
+<audio id="audio" autoplay>
   <source src="Voicy_Impearial March.mp3" type="audio/mpeg">
 </audio>
 
-<h2>Koppints a hanghoz 🔊</h2>
-
 <script>
-function playAudio() {
+window.onload = function() {
   let audio = document.getElementById("audio");
-  audio.volume = 0.2; // 👉 20%
-  audio.play();
+  audio.volume = 0.2;
+  audio.play().catch(() => {
+    // ha blokkolja, akkor kattintás kell
+  });
 }
 </script>
+
+<h2>Ha nem indul el, koppints 🔊</h2>
 
 </body>
 </html>
