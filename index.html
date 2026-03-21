@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html>
-<body onclick="unmute()" style="text-align:center; background:black; color:white;">
+<body onclick="playAudio()" style="text-align:center; background:black; color:white;">
 
 <h1>🎵 Hang</h1>
-  
-<iframe id="yt" width="900" height="600"
-src="Voicy_Impearial March.mp3"
-frameborder="0"
-allow="autoplay"
-allowfullscreen>
-</iframe>
+
+<audio id="audio">
+  <source src="Voicy_Impearial March.mp3" type="audio/mpeg">
+</audio>
 
 <h2>Koppints a hanghoz 🔊</h2>
 
 <script>
-function unmute(0) {
-  let iframe = document.getElementById("yt");
-  iframe.src = iframe.src.replace("mute=1", "mute=0");
+function playAudio() {
+  let audio = document.getElementById("audio");
+  audio.volume = 0.2; // 👉 20%
+  audio.play();
 }
 </script>
 
